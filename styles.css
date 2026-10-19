@@ -1,0 +1,183 @@
+/* PAW & POLISH — Premium Pet Grooming & Care Studio Styles */
+
+/* Google Fonts & Base Typography */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap');
+
+:root {
+  --color-cream: #FDF8F7;
+  --color-sage: #A5A6D6;
+  --color-sage-dark: #7E7FB8;
+  --color-sage-light: #F0F0FA;
+  --color-peach: #EAA5A8;
+  --color-peach-light: #FDF0F1;
+  --color-forest: #262438;
+  --color-forest-deep: #1A1926;
+  --color-charcoal: #2C2A36;
+  --color-charcoal-muted: #696677;
+  --color-white: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+}
+
+.font-serif-title {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FDF8F7;
+}
+::-webkit-scrollbar-thumb {
+  background: #A5A6D6;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7E7FB8;
+}
+
+/* Subtle organic shapes and badges */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Gentle floating paw animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(4deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-5deg);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 7s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+/* Organic curved blob / frame mask */
+.curved-mask-hero {
+  border-radius: 40px 140px 40px 140px;
+}
+
+.curved-mask-alt {
+  border-radius: 120px 40px 120px 40px;
+}
+
+/* Card hover glow & transitions */
+.service-card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service-card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -10px rgba(38, 36, 56, 0.12);
+}
+
+/* Active Nav Indicator (Desktop) */
+.nav-link {
+  position: relative;
+  transition: color 0.25s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2.5px;
+  bottom: -6px;
+  left: 0;
+  background-color: var(--color-peach);
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+.nav-link.active {
+  color: var(--color-forest) !important;
+  font-weight: 700;
+}
+
+/* Mobile Active Nav Item */
+.mobile-nav-link.active {
+  background-color: var(--color-sage-light) !important;
+  color: var(--color-forest) !important;
+  font-weight: 700;
+  border-left: 3px solid var(--color-peach);
+}
+
+/* Glassmorphism backdrop */
+.glass-header {
+  background: rgba(253, 248, 247, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(165, 166, 214, 0.3);
+}
+
+/* Before and After slider/toggle container */
+.ba-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ba-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px -8px rgba(38, 36, 56, 0.15);
+}
+
+/* Custom Modal Backdrop */
+.modal-backdrop {
+  background-color: rgba(26, 25, 38, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+/* Reduced Motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
