@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
       easing: 'ease-out-cubic',
       once: true,
       offset: 50,
-      disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      disable: () => window.innerWidth < 1024 || window.matchMedia('(prefers-reduced-motion: reduce)').matches
     });
   }
 
