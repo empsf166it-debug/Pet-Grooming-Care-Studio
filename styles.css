@@ -209,6 +209,76 @@ header {
   backdrop-filter: blur(6px);
 }
 
+/* Unified CTA styles to ensure same size and single-line text across all screen views */
+.btn-cta-primary,
+.btn-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9375rem; /* 15px */
+  line-height: 1.25rem;
+  padding: 0.875rem 1.75rem; /* h ~48px */
+  min-height: 3rem;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.btn-cta-primary {
+  background-color: var(--color-forest);
+  color: var(--color-cream);
+  border: 2px solid transparent;
+  box-shadow: 0 4px 14px rgba(38, 36, 56, 0.2);
+}
+.btn-cta-primary:hover {
+  background-color: #38354F;
+  box-shadow: 0 6px 20px rgba(38, 36, 56, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-cta-secondary {
+  background-color: #FFFFFF;
+  color: var(--color-forest);
+  border: 2px solid rgba(165, 166, 214, 0.5);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+.btn-cta-secondary:hover {
+  background-color: var(--color-cream);
+  border-color: var(--color-forest);
+  transform: translateY(-1px);
+}
+
+.btn-cta-peach {
+  background-color: var(--color-peach);
+  color: var(--color-forest);
+  box-shadow: 0 4px 14px rgba(234, 165, 168, 0.35);
+}
+.btn-cta-peach:hover {
+  background-color: #D97E83;
+  transform: translateY(-1px);
+}
+
+/* Booking section responsive layout - ensure side-by-side alignment at 960px+ (including 1011px and 1024px) */
+@media (min-width: 960px) {
+  #booking .booking-grid {
+    display: grid !important;
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    align-items: stretch !important;
+  }
+  #booking .booking-info-col {
+    grid-column: span 5 / span 5 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+  #booking .booking-form-col {
+    grid-column: span 7 / span 7 !important;
+  }
+}
+
 /* Reduced Motion respect */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
@@ -218,3 +288,114 @@ header {
     scroll-behavior: auto !important;
   }
 }
+
+/* ========================================================
+   DARK THEME STYLES (Activated when .dark is on <html>)
+   ======================================================== */
+html.dark {
+  color-scheme: dark;
+  background-color: #161520;
+  color: #EDEAF2;
+}
+
+html.dark body {
+  background-color: #161520;
+  color: #EDEAF2;
+}
+
+html.dark .glass-header {
+  background: rgba(22, 21, 32, 0.92);
+  border-bottom-color: rgba(165, 166, 214, 0.18);
+}
+
+html.dark .glass-header a,
+html.dark .glass-header button,
+html.dark .glass-header span {
+  color-scheme: dark;
+}
+
+html.dark #theme-toggle-btn {
+  border-color: rgba(234, 165, 168, 0.35);
+  color: #EAA5A8;
+}
+
+html.dark #theme-toggle-btn:hover {
+  background-color: rgba(234, 165, 168, 0.15);
+}
+
+html.dark #mobile-menu {
+  background-color: #1C1A29;
+  border-color: rgba(165, 166, 214, 0.2);
+}
+
+html.dark .bg-white {
+  background-color: #1E1C2B !important;
+}
+
+html.dark .bg-cream {
+  background-color: #161520 !important;
+}
+
+html.dark .text-forest {
+  color: #F4EFF8 !important;
+}
+
+html.dark .text-charcoal {
+  color: #EDEAF2 !important;
+}
+
+html.dark .text-charcoal-muted {
+  color: #AFAABF !important;
+}
+
+html.dark .border-sage\/20,
+html.dark .border-sage\/25,
+html.dark .border-sage\/30,
+html.dark .border-sage\/40 {
+  border-color: rgba(165, 166, 214, 0.2) !important;
+}
+
+html.dark .service-card-hover {
+  background-color: #211E30 !important;
+  border-color: rgba(165, 166, 214, 0.22) !important;
+}
+
+html.dark .service-card-hover:hover {
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.45);
+}
+
+html.dark .btn-cta-secondary {
+  background-color: #262438;
+  color: #FDF8F7;
+  border-color: rgba(165, 166, 214, 0.35);
+}
+
+html.dark .btn-cta-secondary:hover {
+  background-color: #312E48;
+  border-color: #EAA5A8;
+}
+
+html.dark .btn-cta-primary {
+  background-color: #EAA5A8;
+  color: #1A1926;
+  box-shadow: 0 4px 14px rgba(234, 165, 168, 0.25);
+}
+
+html.dark .btn-cta-primary:hover {
+  background-color: #F2BDC0;
+}
+
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: #262438 !important;
+  color: #EDEAF2 !important;
+  border-color: rgba(165, 166, 214, 0.3) !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #8C879E !important;
+}
+
+

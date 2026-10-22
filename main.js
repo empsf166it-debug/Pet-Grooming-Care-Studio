@@ -28,6 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
     yearElement.textContent = new Date().getFullYear();
   }
 
+  // Default standard clean theme
+  document.documentElement.classList.remove('dark');
+  localStorage.removeItem('paw_polish_theme');
+
   // 4. Mobile Hamburger Menu Toggle
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -252,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'tip-2': {
       title: 'Simple At-Home Paw Care: Protecting Sensitive Pads',
       category: 'Hygiene & Daily Care',
-      image: 'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1000&q=80',
+      image: 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1000&q=80',
       content: `
         <p class="mb-4">Paws are your pet's shock absorbers, temperature regulators, and sensory touchpoints. Keeping them healthy prevents discomfort, bacterial infections, and costly veterinary visits.</p>
         <h4 class="font-bold text-forest text-lg mb-2">Three Steps for Daily Paw Hygiene:</h4>
@@ -267,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'tip-3': {
       title: 'Helping Your Puppy Enjoy Their First Groom',
       category: 'Puppy Socialization',
-      image: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1000&q=80',
+      image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80',
       content: `
         <p class="mb-4">A puppy's first grooming visit establishes their emotional attitude toward grooming for the rest of their life. Our gentle, low-stress desensitization approach makes all the difference.</p>
         <h4 class="font-bold text-forest text-lg mb-2">At-Home Preparation Steps:</h4>

@@ -12,6 +12,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -67,19 +68,19 @@
   <!-- Fixed Header Wrapper & Navigation -->
   <header class="fixed top-0 left-0 right-0 z-50 shadow-sm transition-all duration-300">
     <!-- Top Announcement Bar -->
-    <div class="bg-forest text-cream py-2 px-4 text-xs sm:text-sm font-medium tracking-wide">
-      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+    <div class="bg-forest text-cream py-2 px-4 sm:px-6 lg:px-8 text-xs font-medium tracking-wide">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 lg:gap-4 text-center md:text-left">
         <div class="flex items-center gap-2">
-          <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-sage/30 text-peach">
+          <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-sage/30 text-peach flex-shrink-0">
             <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
           </span>
-          <span>Welcome to PAW &amp; POLISH: Enjoy calm, fear-free grooming for dogs and cats!</span>
+          <span class="truncate sm:whitespace-normal">Welcome to PAW &amp; POLISH: Enjoy calm, fear-free grooming for dogs and cats!</span>
         </div>
-        <div class="flex items-center gap-4 text-xs text-cream/80">
-          <span class="hidden md:inline-flex items-center gap-1">
+        <div class="flex items-center gap-3 sm:gap-4 text-xs text-cream/80 flex-shrink-0">
+          <span class="hidden lg:inline-flex items-center gap-1 whitespace-nowrap">
             <i data-lucide="clock" class="w-3.5 h-3.5 text-peach"></i> Tue – Sun: 8:30 AM – 6:30 PM
           </span>
-          <span class="inline-flex items-center gap-1">
+          <span class="inline-flex items-center gap-1 whitespace-nowrap">
             <i data-lucide="map-pin" class="w-3.5 h-3.5 text-peach"></i> 742 Evergreen Terrace, Suite 104
           </span>
         </div>
@@ -109,7 +110,7 @@
           </a>
 
           <!-- Desktop Navigation Links -->
-          <nav class="hidden lg:flex items-center gap-8" aria-label="Main Navigation">
+          <nav class="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Main Navigation">
             <a href="#home"
               class="nav-link text-sm font-semibold text-charcoal-muted hover:text-forest transition-colors">Home</a>
             <a href="#services"
@@ -120,16 +121,17 @@
               class="nav-link text-sm font-semibold text-charcoal-muted hover:text-forest transition-colors">Gallery</a>
             <a href="#about"
               class="nav-link text-sm font-semibold text-charcoal-muted hover:text-forest transition-colors">About</a>
+            <a href="#wellness"
+              class="nav-link text-sm font-semibold text-charcoal-muted hover:text-forest transition-colors">Wellness</a>
             <a href="#contact"
               class="nav-link text-sm font-semibold text-charcoal-muted hover:text-forest transition-colors">Contact</a>
           </nav>
 
           <!-- Header CTA Button & Mobile Menu Toggle -->
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-3">
             <a href="#booking"
-              class="hidden sm:inline-flex items-center gap-2 bg-forest hover:bg-forest-soft text-cream px-5 py-2.5 rounded-full text-sm font-bold shadow-md shadow-forest/20 hover:shadow-lg transition-all duration-300 group">
+              class="hidden sm:inline-flex items-center justify-center bg-forest hover:bg-forest-soft text-cream px-5 xl:px-6 py-2.5 rounded-full text-sm font-bold shadow-md shadow-forest/20 hover:shadow-lg transition-all duration-300 whitespace-nowrap">
               <span>Book an Appointment</span>
-              <i data-lucide="calendar" class="w-4 h-4 text-peach group-hover:translate-x-0.5 transition-transform"></i>
             </a>
 
             <!-- Mobile Hamburger Toggle -->
@@ -156,14 +158,15 @@
             class="mobile-nav-link py-2.5 px-4 rounded-xl text-charcoal hover:bg-sage-light hover:text-forest transition-colors">Gallery</a>
           <a href="#about"
             class="mobile-nav-link py-2.5 px-4 rounded-xl text-charcoal hover:bg-sage-light hover:text-forest transition-colors">About</a>
+          <a href="#wellness"
+            class="mobile-nav-link py-2.5 px-4 rounded-xl text-charcoal hover:bg-sage-light hover:text-forest transition-colors">Wellness</a>
           <a href="#contact"
             class="mobile-nav-link py-2.5 px-4 rounded-xl text-charcoal hover:bg-sage-light hover:text-forest transition-colors">Contact</a>
         </div>
-        <div class="pt-3 border-t border-sage/20">
+        <div class="pt-3 border-t border-sage/20 flex flex-col gap-3">
           <a href="#booking"
-            class="mobile-nav-link w-full inline-flex justify-center items-center gap-2 bg-forest text-cream py-3 rounded-xl font-bold shadow-md">
+            class="mobile-nav-link w-full inline-flex justify-center items-center bg-forest text-cream py-3.5 px-6 rounded-xl font-bold shadow-md whitespace-nowrap text-sm">
             <span>Book an Appointment</span>
-            <i data-lucide="calendar" class="w-4 h-4 text-peach"></i>
           </a>
         </div>
       </div>
@@ -240,15 +243,13 @@
             <!-- Hero Action Buttons -->
             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
               <a href="#booking"
-                class="w-full sm:w-auto inline-flex justify-center items-center gap-2.5 bg-forest hover:bg-forest-soft text-cream font-bold px-8 py-4 rounded-full shadow-lg shadow-forest/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+                class="hero-cta-btn btn-cta-primary w-full sm:w-[240px] min-[960px]:w-[245px] h-14 shadow-lg shadow-forest/25 hover:shadow-xl transition-all duration-300">
                 <span>Book a Grooming Session</span>
-                <i data-lucide="arrow-right" class="w-4 h-4 text-peach"></i>
               </a>
 
               <a href="#services"
-                class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white hover:bg-cream border-2 border-sage/50 text-forest font-bold px-8 py-4 rounded-full shadow-sm hover:border-forest hover:-translate-y-0.5 transition-all duration-300">
+                class="hero-cta-btn btn-cta-secondary w-full sm:w-[240px] min-[960px]:w-[245px] h-14 shadow-sm transition-all duration-300">
                 <span>Explore Our Services</span>
-                <i data-lucide="scissors" class="w-4 h-4 text-forest"></i>
               </a>
             </div>
 
@@ -383,9 +384,8 @@
               </div>
               <div class="pt-3">
                 <a href="#booking"
-                  class="inline-flex items-center gap-2 text-forest font-bold text-sm hover:text-peach-dark transition-colors">
+                  class="inline-flex items-center text-forest font-bold text-sm hover:text-peach-dark transition-colors whitespace-nowrap">
                   <span>Book Luxury Spa Experience</span>
-                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
               </div>
             </div>
@@ -557,16 +557,15 @@
               </div>
               <div class="pt-3">
                 <a href="#booking"
-                  class="inline-flex items-center gap-2 text-forest font-bold text-sm hover:text-peach-dark transition-colors">
+                  class="inline-flex items-center text-forest font-bold text-sm hover:text-peach-dark transition-colors whitespace-nowrap">
                   <span>Schedule First Puppy Visit</span>
-                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
               </div>
             </div>
             <div class="lg:col-span-5 relative overflow-hidden rounded-2xl h-64 sm:h-72 order-1 lg:order-2">
-              <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=80"
-                alt="Adorable young puppy receiving gentle first grooming brush"
-                class="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-500"
+              <img src="assets/services/happy-beagle-pup.jpg"
+                alt="Happy puppy with radiant smile enjoying first grooming visit"
+                class="w-full h-full object-cover object-center rounded-2xl hover:scale-105 transition-transform duration-500"
                 loading="lazy" />
               <span
                 class="absolute top-3 right-3 bg-peach text-forest text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
@@ -586,30 +585,30 @@
     <section id="philosophy" class="py-20 lg:py-28 bg-cream relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-16 items-center">
 
           <!-- Image-Led Left Column (5 Cols) -->
           <div class="lg:col-span-5 relative" data-aos="fade-right">
-            <div class="relative">
+            <div class="relative max-w-md mx-auto lg:max-w-none">
               <!-- Rounded organic styling -->
               <div class="relative bg-white p-3 rounded-3xl shadow-xl border border-sage/20">
                 <img src="https://images.unsplash.com/photo-1591946614720-90a587da4a36?auto=format&fit=crop&w=800&q=80"
                   alt="Professional groomer gently caring for and comforting a calm pet"
-                  class="w-full h-[460px] object-cover rounded-2xl" loading="lazy" />
+                  class="w-full h-[380px] sm:h-[440px] lg:h-[460px] object-cover rounded-2xl" loading="lazy" />
 
                 <!-- Quote Card Overlay -->
                 <div
-                  class="absolute -bottom-6 -right-4 sm:right-6 bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-xl border border-sage/30 max-w-xs">
+                  class="absolute -bottom-5 sm:-bottom-6 left-4 sm:left-auto right-4 sm:right-4 xl:right-6 bg-white/95 backdrop-blur-md p-3.5 sm:p-5 rounded-2xl shadow-xl border border-sage/30 max-w-[260px] sm:max-w-xs z-10">
                   <div class="flex items-center gap-1 text-peach mb-1">
-                    <i data-lucide="star" class="w-4 h-4 fill-peach"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-peach"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-peach"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-peach"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-peach"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-peach"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-peach"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-peach"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-peach"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-peach"></i>
                   </div>
-                  <p class="text-xs text-charcoal italic font-medium">“Every pet is treated as family with dignity,
+                  <p class="text-[0.7rem] sm:text-xs text-charcoal italic font-medium leading-relaxed">“Every pet is treated as family with dignity,
                     patience, and warmth.”</p>
-                  <p class="text-[0.65rem] text-charcoal-muted uppercase font-bold mt-2">— PAW &amp; POLISH Care
+                  <p class="text-[0.6rem] sm:text-[0.65rem] text-charcoal-muted uppercase font-bold mt-1.5 sm:mt-2">— PAW &amp; POLISH Care
                     Standard</p>
                 </div>
               </div>
@@ -617,25 +616,25 @@
           </div>
 
           <!-- Editorial Content Right Column (7 Cols) -->
-          <div class="lg:col-span-7 space-y-6" data-aos="fade-left">
+          <div class="lg:col-span-7 space-y-5 lg:space-y-6" data-aos="fade-left">
 
             <div
               class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sage-light text-forest text-xs font-bold uppercase tracking-wider">
               <i data-lucide="shield-check" class="w-3.5 h-3.5 text-sage-dark"></i> Our Core Values
             </div>
 
-            <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest leading-tight">
+            <h2 class="font-serif text-2xl sm:text-4xl lg:text-[2.6rem] xl:text-5xl font-bold text-forest leading-[1.2]">
               Why Discerning Pet Parents Place Their Trust in PAW &amp; POLISH
             </h2>
 
-            <p class="text-charcoal-muted text-base sm:text-lg leading-relaxed">
+            <p class="text-charcoal-muted text-sm sm:text-base lg:text-[1.05rem] leading-relaxed">
               We founded PAW &amp; POLISH with one uncompromising principle: grooming should be an enjoyable wellness
               ritual, not a source of stress. We ban rush jobs, loud cage dryers, and abrasive restraints in favor of
               one-on-one compassionate attention.
             </p>
 
             <!-- 6 Key Philosophy Pillars -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 pt-2 sm:pt-4">
 
               <div class="flex items-start gap-3.5">
                 <div
@@ -811,10 +810,9 @@
 
             <!-- CTA -->
             <button type="button"
-              class="select-package-btn w-full py-3.5 px-6 rounded-2xl bg-white hover:bg-forest hover:text-cream text-forest font-bold text-sm border-2 border-forest/20 hover:border-forest shadow-sm transition-all duration-300 flex items-center justify-center gap-2"
+              class="select-package-btn w-full h-14 rounded-2xl bg-white hover:bg-forest hover:text-cream text-forest font-bold text-sm border-2 border-forest/20 hover:border-forest shadow-sm transition-all duration-300 flex items-center justify-center whitespace-nowrap"
               data-package="Puppy Fresh">
               <span>Choose Package</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
           </div>
 
@@ -887,10 +885,9 @@
 
             <!-- CTA -->
             <button type="button"
-              class="select-package-btn w-full py-4 px-6 rounded-2xl bg-peach hover:bg-peach-dark text-forest font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+              class="select-package-btn w-full h-14 rounded-2xl bg-peach hover:bg-peach-dark text-forest font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center whitespace-nowrap"
               data-package="Signature Groom">
               <span>Choose Signature Groom</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
           </div>
 
@@ -920,7 +917,7 @@
                   <span class="text-xs text-charcoal-muted">/ session*</span>
                 </div>
                 <p class="text-[0.7rem] text-charcoal-muted mt-1 italic">Configurable by pet size, breed &amp; coat
-                  condition</p>
+                condition</p>
               </div>
 
               <!-- Inclusions -->
@@ -957,10 +954,9 @@
 
             <!-- CTA -->
             <button type="button"
-              class="select-package-btn w-full py-3.5 px-6 rounded-2xl bg-white hover:bg-forest hover:text-cream text-forest font-bold text-sm border-2 border-forest/20 hover:border-forest shadow-sm transition-all duration-300 flex items-center justify-center gap-2"
+              class="select-package-btn w-full h-14 rounded-2xl bg-white hover:bg-forest hover:text-cream text-forest font-bold text-sm border-2 border-forest/20 hover:border-forest shadow-sm transition-all duration-300 flex items-center justify-center whitespace-nowrap"
               data-package="Luxury Paw Spa">
               <span>Choose Package</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
           </div>
 
@@ -1035,16 +1031,16 @@
             class="gallery-item ba-card bg-white rounded-3xl p-4 sm:p-5 border border-sage/25 shadow-sm transition-all duration-300"
             data-category="dogs haircuts" data-title="Milo — Goldendoodle Teddy Scissor Trim"
             data-desc="Milo arrived with overgrown, damp matted curls after rainy-day play. We applied our hydro-surge detangling bath, hand blow-dry, and signature rounded teddy-bear scissor trim."
-            data-before-src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=700&q=80"
-            data-after-src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=700&q=80">
+            data-before-src="assets/gallery/milo-before.jpg"
+            data-after-src="assets/gallery/milo-after.jpg">
 
             <div class="gallery-preview-trigger cursor-pointer group">
               <!-- Desktop Side-by-Side Images -->
               <div class="grid grid-cols-2 gap-2 rounded-2xl overflow-hidden relative mb-4">
                 <div class="relative overflow-hidden h-44 sm:h-48 bg-cream">
                   <img
-                    src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=500&q=80"
-                    alt="Milo before grooming"
+                    src="assets/gallery/milo-before.jpg"
+                    alt="Milo the Goldendoodle before grooming"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy">
                   <span
@@ -1052,8 +1048,8 @@
                 </div>
                 <div class="relative overflow-hidden h-44 sm:h-48 bg-cream">
                   <img
-                    src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=500&q=80"
-                    alt="Milo after grooming"
+                    src="assets/gallery/milo-after.jpg"
+                    alt="Milo the Goldendoodle after grooming"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy">
                   <span
@@ -1068,12 +1064,12 @@
                 </div>
               </div>
 
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="font-serif font-bold text-forest text-lg">Milo (Goldendoodle)</h3>
-                  <p class="text-xs text-charcoal-muted">Teddy Scissor Styling &amp; Detangling</p>
+              <div class="flex items-center justify-between gap-2">
+                <div class="min-w-0">
+                  <h3 class="font-serif font-bold text-forest text-base sm:text-lg whitespace-nowrap truncate">Milo (Doodle)</h3>
+                  <p class="text-xs text-charcoal-muted truncate">Teddy Scissor Styling</p>
                 </div>
-                <span class="text-xs font-bold text-peach-dark bg-peach-light px-2.5 py-1 rounded-full">Haircut</span>
+                <span class="text-[0.7rem] font-bold text-peach-dark bg-peach-light px-2.5 py-1 rounded-full whitespace-nowrap flex-shrink-0">Haircut</span>
               </div>
             </div>
           </div>
@@ -1083,15 +1079,15 @@
             class="gallery-item ba-card bg-white rounded-3xl p-4 sm:p-5 border border-sage/25 shadow-sm transition-all duration-300"
             data-category="cats haircuts spa" data-title="Cleo — Persian Feline Coat Reset &amp; Hygiene"
             data-desc="Cleo required delicate handling to gently remove friction knots behind her ears and armpits. We completed a dry foaming botanical cleanse, face wash, and full fluffy brush-out."
-            data-before-src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=700&q=80"
-            data-after-src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=700&q=80">
+            data-before-src="assets/gallery/cleo-before.jpg"
+            data-after-src="assets/gallery/cleo-after.jpg">
 
             <div class="gallery-preview-trigger cursor-pointer group">
               <div class="grid grid-cols-2 gap-2 rounded-2xl overflow-hidden relative mb-4">
                 <div class="relative overflow-hidden h-44 sm:h-48 bg-cream">
                   <img
-                    src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=500&q=80"
-                    alt="Cleo cat before grooming"
+                    src="assets/gallery/cleo-before.jpg"
+                    alt="Cleo Persian cat before grooming"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy">
                   <span
@@ -1099,8 +1095,8 @@
                 </div>
                 <div class="relative overflow-hidden h-44 sm:h-48 bg-cream">
                   <img
-                    src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=500&q=80"
-                    alt="Cleo cat after grooming"
+                    src="assets/gallery/cleo-after.jpg"
+                    alt="Cleo Persian cat after grooming"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy">
                   <span
@@ -1114,12 +1110,12 @@
                 </div>
               </div>
 
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="font-serif font-bold text-forest text-lg">Cleo (Persian Feline)</h3>
-                  <p class="text-xs text-charcoal-muted">Knot Removal &amp; Silky Conditioning</p>
+              <div class="flex items-center justify-between gap-2">
+                <div class="min-w-0">
+                  <h3 class="font-serif font-bold text-forest text-base sm:text-lg whitespace-nowrap truncate">Cleo (Persian)</h3>
+                  <p class="text-xs text-charcoal-muted truncate">Silky Coat Conditioning</p>
                 </div>
-                <span class="text-xs font-bold text-forest bg-sage-light px-2.5 py-1 rounded-full">Cat Groom</span>
+                <span class="text-[0.7rem] font-bold text-forest bg-sage-light px-2.5 py-1 rounded-full whitespace-nowrap flex-shrink-0">Cat Groom</span>
               </div>
             </div>
           </div>
@@ -1129,14 +1125,14 @@
             class="gallery-item ba-card bg-white rounded-3xl p-4 sm:p-5 border border-sage/25 shadow-sm transition-all duration-300"
             data-category="dogs spa" data-title="Bailey — Golden Retriever Deep De-Shedding &amp; Spa"
             data-desc="Bailey had heavy seasonal shedding causing discomfort and itchy skin. Our multi-stage amino treatment and blow-out removed over 3 pounds of trapped undercoat."
-            data-before-src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=80"
-            data-after-src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=700&q=80">
+            data-before-src="assets/gallery/bailey-before.jpg"
+            data-after-src="assets/gallery/bailey-after.jpg">
 
             <div class="gallery-preview-trigger cursor-pointer group">
               <div class="grid grid-cols-2 gap-2 rounded-2xl overflow-hidden relative mb-4">
                 <div class="relative overflow-hidden h-44 sm:h-48 bg-cream">
-                  <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=500&q=80"
-                    alt="Bailey before de-shedding"
+                  <img src="assets/gallery/bailey-before.jpg"
+                    alt="Bailey Golden Retriever before de-shedding"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy">
                   <span
@@ -1144,8 +1140,8 @@
                 </div>
                 <div class="relative overflow-hidden h-44 sm:h-48 bg-cream">
                   <img
-                    src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=500&q=80"
-                    alt="Bailey after de-shedding"
+                    src="assets/gallery/bailey-after.jpg"
+                    alt="Bailey Golden Retriever after de-shedding"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy">
                   <span
@@ -1159,12 +1155,12 @@
                 </div>
               </div>
 
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="font-serif font-bold text-forest text-lg">Bailey (Golden Retriever)</h3>
-                  <p class="text-xs text-charcoal-muted">Seasonal De-Shed &amp; Silky Blow-out</p>
+              <div class="flex items-center justify-between gap-2">
+                <div class="min-w-0">
+                  <h3 class="font-serif font-bold text-forest text-base sm:text-lg whitespace-nowrap truncate">Bailey (Retriever)</h3>
+                  <p class="text-xs text-charcoal-muted truncate">De-Shed &amp; Silky Blow-out</p>
                 </div>
-                <span class="text-xs font-bold text-forest bg-sage-light px-2.5 py-1 rounded-full">De-Shed Spa</span>
+                <span class="text-[0.7rem] font-bold text-forest bg-sage-light px-2.5 py-1 rounded-full whitespace-nowrap flex-shrink-0">De-Shed</span>
               </div>
             </div>
           </div>
@@ -1174,23 +1170,23 @@
             class="gallery-item ba-card bg-white rounded-3xl p-4 sm:p-5 border border-sage/25 shadow-sm transition-all duration-300"
             data-category="dogs haircuts" data-title="Bella — Shih Tzu Asian Fusion Styling"
             data-desc="Bella came in with dense scruffy face fur hiding her bright eyes. We sculpted a rounded muzzle, bell-bottom legs, and soft ear fringes with blueberry facial wash."
-            data-before-src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=700&q=80"
-            data-after-src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=700&q=80">
+            data-before-src="assets/gallery/bella-before.jpg"
+            data-after-src="assets/gallery/bella-after.jpg">
 
             <div class="gallery-preview-trigger cursor-pointer group">
               <div class="grid grid-cols-2 gap-2 rounded-2xl overflow-hidden relative mb-4">
                 <div class="relative overflow-hidden h-44 sm:h-48 bg-cream">
                   <img
-                    src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=500&q=80"
-                    alt="Bella before haircut"
+                    src="assets/gallery/bella-before.jpg"
+                    alt="Bella Shih Tzu before haircut"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy">
                   <span
                     class="absolute bottom-2 left-2 bg-charcoal/80 text-white text-[0.65rem] font-bold uppercase px-2 py-0.5 rounded">Before</span>
                 </div>
                 <div class="relative overflow-hidden h-44 sm:h-48 bg-cream">
-                  <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=500&q=80"
-                    alt="Bella after haircut"
+                  <img src="assets/gallery/bella-after.jpg"
+                    alt="Bella Shih Tzu after haircut"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy">
                   <span
@@ -1204,12 +1200,12 @@
                 </div>
               </div>
 
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="font-serif font-bold text-forest text-lg">Bella (Shih Tzu)</h3>
-                  <p class="text-xs text-charcoal-muted">Asian Fusion Scissor Sculpting</p>
+              <div class="flex items-center justify-between gap-2">
+                <div class="min-w-0">
+                  <h3 class="font-serif font-bold text-forest text-base sm:text-lg whitespace-nowrap truncate">Bella (Shih Tzu)</h3>
+                  <p class="text-xs text-charcoal-muted truncate">Asian Fusion Scissor Sculpting</p>
                 </div>
-                <span class="text-xs font-bold text-peach-dark bg-peach-light px-2.5 py-1 rounded-full">Haircut</span>
+                <span class="text-[0.7rem] font-bold text-peach-dark bg-peach-light px-2.5 py-1 rounded-full whitespace-nowrap flex-shrink-0">Haircut</span>
               </div>
             </div>
           </div>
@@ -1219,14 +1215,14 @@
             class="gallery-item ba-card bg-white rounded-3xl p-4 sm:p-5 border border-sage/25 shadow-sm transition-all duration-300"
             data-category="cats haircuts" data-title="Oliver — Domestic Longhair Summer Trim"
             data-desc="Oliver struggled with severe matting around his belly during high humidity. We gave him a clean, gentle velvet coat trim while preserving his majestic mane and tail plume."
-            data-before-src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=700&q=80"
-            data-after-src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=700&q=80">
+            data-before-src="assets/gallery/oliver-before.jpg"
+            data-after-src="assets/gallery/oliver-after.jpg">
 
             <div class="gallery-preview-trigger cursor-pointer group">
               <div class="grid grid-cols-2 gap-2 rounded-2xl overflow-hidden relative mb-4">
                 <div class="relative overflow-hidden h-44 sm:h-48 bg-cream">
-                  <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=500&q=80"
-                    alt="Oliver before cat trim"
+                  <img src="assets/gallery/oliver-before.jpg"
+                    alt="Oliver cat before grooming"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy">
                   <span
@@ -1234,8 +1230,8 @@
                 </div>
                 <div class="relative overflow-hidden h-44 sm:h-48 bg-cream">
                   <img
-                    src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=500&q=80"
-                    alt="Oliver after cat trim"
+                    src="assets/gallery/oliver-after.jpg"
+                    alt="Oliver cat after grooming"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy">
                   <span
@@ -1249,12 +1245,12 @@
                 </div>
               </div>
 
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="font-serif font-bold text-forest text-lg">Oliver (Longhair Cat)</h3>
-                  <p class="text-xs text-charcoal-muted">Gentle Mat Relief &amp; Lion Trim</p>
+              <div class="flex items-center justify-between gap-2">
+                <div class="min-w-0">
+                  <h3 class="font-serif font-bold text-forest text-base sm:text-lg whitespace-nowrap truncate">Oliver (Longhair)</h3>
+                  <p class="text-xs text-charcoal-muted truncate">Gentle Mat Relief</p>
                 </div>
-                <span class="text-xs font-bold text-forest bg-sage-light px-2.5 py-1 rounded-full">Cat Groom</span>
+                <span class="text-[0.7rem] font-bold text-forest bg-sage-light px-2.5 py-1 rounded-full whitespace-nowrap flex-shrink-0">Cat Groom</span>
               </div>
             </div>
           </div>
@@ -1264,15 +1260,15 @@
             class="gallery-item ba-card bg-white rounded-3xl p-4 sm:p-5 border border-sage/25 shadow-sm transition-all duration-300"
             data-category="dogs spa" data-title="Rocky — French Bulldog Wrinkle &amp; Paw Spa"
             data-desc="Rocky suffered from dry cracked pads and irritated facial folds. We administered an anti-bacterial wrinkle antiseptic cleanse, paw balm hydration, and ear detox."
-            data-before-src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=700&q=80"
-            data-after-src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=80">
+            data-before-src="assets/gallery/rocky-before.jpg"
+            data-after-src="assets/gallery/rocky-after.jpg">
 
             <div class="gallery-preview-trigger cursor-pointer group">
               <div class="grid grid-cols-2 gap-2 rounded-2xl overflow-hidden relative mb-4">
                 <div class="relative overflow-hidden h-44 sm:h-48 bg-cream">
                   <img
-                    src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=500&q=80"
-                    alt="Rocky before fold spa"
+                    src="assets/gallery/rocky-before.jpg"
+                    alt="Rocky French Bulldog before fold spa"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy">
                   <span
@@ -1280,8 +1276,8 @@
                 </div>
                 <div class="relative overflow-hidden h-44 sm:h-48 bg-cream">
                   <img
-                    src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=500&q=80"
-                    alt="Rocky after fold spa"
+                    src="assets/gallery/rocky-after.jpg"
+                    alt="Rocky French Bulldog after fold spa"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy">
                   <span
@@ -1295,13 +1291,12 @@
                 </div>
               </div>
 
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="font-serif font-bold text-forest text-lg">Rocky (French Bulldog)</h3>
-                  <p class="text-xs text-charcoal-muted">Wrinkle Cleansing &amp; Pad Butter</p>
+              <div class="flex items-center justify-between gap-2">
+                <div class="min-w-0">
+                  <h3 class="font-serif font-bold text-forest text-base sm:text-lg whitespace-nowrap truncate">Rocky (Frenchie)</h3>
+                  <p class="text-xs text-charcoal-muted truncate">Wrinkle &amp; Pad Butter Spa</p>
                 </div>
-                <span class="text-xs font-bold text-forest bg-sage-light px-2.5 py-1 rounded-full">Skin &amp;
-                  Paws</span>
+                <span class="text-[0.7rem] font-bold text-forest bg-sage-light px-2.5 py-1 rounded-full whitespace-nowrap flex-shrink-0">Skin &amp; Paws</span>
               </div>
             </div>
           </div>
@@ -1333,7 +1328,7 @@
         </div>
 
         <!-- 4 Team Profiles Grid with varied editorial aesthetic -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 xl:gap-8">
 
           <!-- Expert 1: Clara Vance -->
           <div class="bg-cream rounded-3xl p-5 border border-sage/20 service-card-hover flex flex-col"
@@ -1358,9 +1353,12 @@
                 </p>
               </div>
               <div
-                class="pt-3 border-t border-sage/20 flex items-center justify-between text-xs text-forest font-semibold">
-                <span>Speciality: Breed Scissor Art</span>
-                <i data-lucide="award" class="w-4 h-4 text-peach-dark"></i>
+                class="pt-3 border-t border-sage/20 flex flex-col justify-center min-h-[3rem]">
+                <div class="flex items-center justify-between text-[0.7rem] font-bold text-peach-dark uppercase tracking-wider mb-0.5">
+                  <span>Speciality</span>
+                  <i data-lucide="award" class="w-3.5 h-3.5 flex-shrink-0"></i>
+                </div>
+                <p class="text-xs font-semibold text-forest">Breed Scissor Art</p>
               </div>
             </div>
           </div>
@@ -1388,9 +1386,12 @@
                 </p>
               </div>
               <div
-                class="pt-3 border-t border-sage/20 flex items-center justify-between text-xs text-forest font-semibold">
-                <span>Speciality: Low-Stress Feline Care</span>
-                <i data-lucide="cat" class="w-4 h-4 text-peach-dark"></i>
+                class="pt-3 border-t border-sage/20 flex flex-col justify-center min-h-[3rem]">
+                <div class="flex items-center justify-between text-[0.7rem] font-bold text-peach-dark uppercase tracking-wider mb-0.5">
+                  <span>Speciality</span>
+                  <i data-lucide="cat" class="w-3.5 h-3.5 flex-shrink-0"></i>
+                </div>
+                <p class="text-xs font-semibold text-forest">Low-Stress Feline Care</p>
               </div>
             </div>
           </div>
@@ -1418,9 +1419,12 @@
                 </p>
               </div>
               <div
-                class="pt-3 border-t border-sage/20 flex items-center justify-between text-xs text-forest font-semibold">
-                <span>Speciality: Puppy Socialization</span>
-                <i data-lucide="heart" class="w-4 h-4 text-peach-dark"></i>
+                class="pt-3 border-t border-sage/20 flex flex-col justify-center min-h-[3rem]">
+                <div class="flex items-center justify-between text-[0.7rem] font-bold text-peach-dark uppercase tracking-wider mb-0.5">
+                  <span>Speciality</span>
+                  <i data-lucide="heart" class="w-3.5 h-3.5 flex-shrink-0"></i>
+                </div>
+                <p class="text-xs font-semibold text-forest">Puppy Socialization</p>
               </div>
             </div>
           </div>
@@ -1449,18 +1453,17 @@
                 </p>
               </div>
               <div
-                class="pt-3 border-t border-sage/20 flex items-center justify-between text-xs text-forest font-semibold">
-                <span>Speciality: Skin Restoration</span>
-                <i data-lucide="sparkles" class="w-4 h-4 text-peach-dark"></i>
+                class="pt-3 border-t border-sage/20 flex flex-col justify-center min-h-[3rem]">
+                <div class="flex items-center justify-between text-[0.7rem] font-bold text-peach-dark uppercase tracking-wider mb-0.5">
+                  <span>Speciality</span>
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5 flex-shrink-0"></i>
+                </div>
+                <p class="text-xs font-semibold text-forest">Skin Restoration</p>
               </div>
             </div>
           </div>
 
         </div>
-
-        <p class="text-center text-xs text-charcoal-muted mt-8 italic">
-          *Team profiles and bios presented as customizable ThemeForest template demonstrations.
-        </p>
 
       </div>
     </section>
@@ -1549,7 +1552,7 @@
                 </p>
               </div>
               <div class="flex items-center gap-3 pt-3 border-t border-sage/20">
-                <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=150&q=80"
+                <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=150&q=80"
                   alt="Cleo the cat with parent"
                   class="w-10 h-10 rounded-full object-cover border border-sage shadow-sm" loading="lazy" />
                 <div>
@@ -1576,7 +1579,7 @@
                 </p>
               </div>
               <div class="flex items-center gap-3 pt-3 border-t border-sage/20">
-                <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=150&q=80"
+                <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=150&q=80"
                   alt="Puppy review author" class="w-10 h-10 rounded-full object-cover border border-sage shadow-sm"
                   loading="lazy" />
                 <div>
@@ -1652,7 +1655,7 @@
                 </span>
               </div>
               <div class="p-6">
-                <h3 class="font-serif text-lg font-bold text-forest mb-2 leading-snug">
+                <h3 class="font-serif text-lg font-bold text-forest mb-2 leading-snug lg:min-h-[4.75rem]">
                   How Often Should Your Dog Be Groomed?
                 </h3>
                 <p class="text-xs text-charcoal-muted leading-relaxed line-clamp-3 mb-4">
@@ -1677,8 +1680,8 @@
             data-aos="fade-up" data-aos-delay="200">
             <div>
               <div class="relative h-48 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=600&q=80"
-                  alt="Dog paws resting comfortably"
+                <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=600&q=80"
+                  alt="Pet paws and wellness care"
                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
                 <span
                   class="absolute top-3 left-3 bg-peach-dark text-white text-[0.65rem] font-bold uppercase px-2.5 py-1 rounded-full">
@@ -1686,7 +1689,7 @@
                 </span>
               </div>
               <div class="p-6">
-                <h3 class="font-serif text-lg font-bold text-forest mb-2 leading-snug">
+                <h3 class="font-serif text-lg font-bold text-forest mb-2 leading-snug lg:min-h-[4.75rem]">
                   Simple At-Home Paw Care &amp; Pad Protection
                 </h3>
                 <p class="text-xs text-charcoal-muted leading-relaxed line-clamp-3 mb-4">
@@ -1711,7 +1714,7 @@
             data-aos="fade-up" data-aos-delay="300">
             <div>
               <div class="relative h-48 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=80"
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80"
                   alt="Young puppy smiling happily"
                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
                 <span
@@ -1720,7 +1723,7 @@
                 </span>
               </div>
               <div class="p-6">
-                <h3 class="font-serif text-lg font-bold text-forest mb-2 leading-snug">
+                <h3 class="font-serif text-lg font-bold text-forest mb-2 leading-snug lg:min-h-[4.75rem]">
                   Helping Your Puppy Enjoy Their First Groom
                 </h3>
                 <p class="text-xs text-charcoal-muted leading-relaxed line-clamp-3 mb-4">
@@ -1754,8 +1757,8 @@
                 </span>
               </div>
               <div class="p-6">
-                <h3 class="font-serif text-lg font-bold text-forest mb-2 leading-snug">
-                  Brushing Tips for Long-Haired Cats
+                <h3 class="font-serif text-lg font-bold text-forest mb-2 leading-snug lg:min-h-[4.75rem]">
+                  Essential Brushing Tips for Long-Haired Cats
                 </h3>
                 <p class="text-xs text-charcoal-muted leading-relaxed line-clamp-3 mb-4">
                   How to prevent tight pelted mats in delicate areas behind ears and thighs without stressing feline
@@ -1785,33 +1788,33 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="bg-white rounded-3xl sm:rounded-[40px] shadow-xl border border-sage/30 overflow-hidden">
-          <div class="grid grid-cols-1 lg:grid-cols-12">
+          <div class="booking-grid grid grid-cols-1 min-[960px]:grid-cols-12 items-stretch">
 
-            <!-- Booking Form Info Side (5 Cols) -->
+            <!-- Booking Form Info Side (5 Cols on Desktop) -->
             <div
-              class="lg:col-span-5 bg-forest text-cream p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
+              class="booking-info-col min-[960px]:col-span-5 bg-forest text-cream p-6 sm:p-8 lg:p-8 xl:p-10 flex flex-col justify-between relative overflow-hidden">
               <!-- Decorative background paw print -->
               <div class="absolute -right-8 -bottom-8 text-white/5 pointer-events-none">
                 <i data-lucide="paw-print" class="w-72 h-72"></i>
               </div>
 
-              <div>
+              <div class="flex-1 flex flex-col justify-start">
                 <div
-                  class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-peach text-forest text-xs font-bold uppercase tracking-wider mb-6">
+                  class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-peach text-forest text-xs font-bold uppercase tracking-wider mb-6 self-start">
                   <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Easy Online Enquiry
                 </div>
 
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cream mb-4 leading-tight">
+                <h2 class="font-serif text-2xl sm:text-3xl xl:text-4xl font-bold text-cream mb-4 leading-tight">
                   Your Pet's Next Happy Day Starts Here.
                 </h2>
 
-                <p class="text-cream/80 text-sm sm:text-base leading-relaxed mb-8">
+                <p class="text-cream/80 text-xs sm:text-sm leading-relaxed mb-6">
                   Complete our quick appointment enquiry form. Our salon concierge will review your pet's needs and
                   contact you to confirm timing, pricing, and care details.
                 </p>
 
                 <!-- Helpful booking reminders -->
-                <div class="space-y-4 mb-8">
+                <div class="space-y-4 mb-6">
                   <div class="flex items-start gap-3">
                     <div
                       class="w-7 h-7 rounded-lg bg-peach/20 text-peach flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -1819,7 +1822,7 @@
                     </div>
                     <div>
                       <h4 class="text-xs font-bold text-cream">Enquiry Confirmation Policy</h4>
-                      <p class="text-[0.75rem] text-cream/70">Submitting this form is an appointment request. Our staff
+                      <p class="text-[0.75rem] text-cream/70 leading-normal mt-0.5">Submitting this form is an appointment request. Our staff
                         will confirm exact availability within 4 business hours.</p>
                     </div>
                   </div>
@@ -1831,7 +1834,7 @@
                     </div>
                     <div>
                       <h4 class="text-xs font-bold text-cream">Vaccination Safety</h4>
-                      <p class="text-[0.75rem] text-cream/70">For the safety of all pets, current Rabies and DHPP/FVRCP
+                      <p class="text-[0.75rem] text-cream/70 leading-normal mt-0.5">For the safety of all pets, current Rabies and DHPP/FVRCP
                         vaccinations are required prior to salon service.</p>
                     </div>
                   </div>
@@ -1843,23 +1846,67 @@
                     </div>
                     <div>
                       <h4 class="text-xs font-bold text-cream">Questions? Call Directly</h4>
-                      <p class="text-[0.75rem] text-peach font-semibold">(555) 729-7654</p>
+                      <p class="text-[0.75rem] text-peach font-semibold mt-0.5">(555) 729-7654</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3">
+                    <div
+                      class="w-7 h-7 rounded-lg bg-peach/20 text-peach flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-xs font-bold text-cream">Fear-Free Promise</h4>
+                      <p class="text-[0.75rem] text-cream/70 leading-normal mt-0.5">We take regular calming breaks with soothing pheromone diffusers and organic treats.</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3">
+                    <div
+                      class="w-7 h-7 rounded-lg bg-peach/20 text-peach flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <i data-lucide="clock" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-xs font-bold text-cream">Operating Hours</h4>
+                      <p class="text-[0.75rem] text-cream/70 leading-normal mt-0.5">Tue – Fri: 8:30 AM – 6:30 PM • Sat – Sun: 9:00 AM – 5:30 PM (Mon Closed)</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3">
+                    <div
+                      class="w-7 h-7 rounded-lg bg-peach/20 text-peach flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-xs font-bold text-cream">Hospital-Grade Hygiene</h4>
+                      <p class="text-[0.75rem] text-cream/70 leading-normal mt-0.5">Every table, scissor, and blade is UV-sterilized between appointments.</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3">
+                    <div
+                      class="w-7 h-7 rounded-lg bg-peach/20 text-peach flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <i data-lucide="alert-circle" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-xs font-bold text-cream">Flexible Rescheduling</h4>
+                      <p class="text-[0.75rem] text-cream/70 leading-normal mt-0.5">Need to move your visit? Free date modifications with 24 hours notice.</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <!-- Pet Photo in side panel -->
-              <div class="rounded-2xl overflow-hidden border border-white/10 mt-6 shadow-md">
-                <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=700&q=80"
-                  alt="Happy pampered dog looking forward to salon visit" class="w-full h-44 object-cover"
+              <div class="booking-side-photo rounded-2xl overflow-hidden border border-white/10 mt-5 shadow-md w-full h-[220px] sm:h-[240px] min-[960px]:h-[260px] flex-shrink-0">
+                <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=700&q=80"
+                  alt="Happy pampered dog looking forward to salon visit" class="w-full h-full object-cover object-center"
                   loading="lazy" />
               </div>
 
             </div>
 
             <!-- Booking Form Interactive Fields (7 Cols) -->
-            <div class="lg:col-span-7 p-8 sm:p-12">
+            <div class="booking-form-col min-[960px]:col-span-7 p-6 sm:p-8 lg:p-8 xl:p-10 flex flex-col justify-between">
 
               <!-- Form Submission Success Alert -->
               <div id="form-success-alert"
@@ -1939,25 +1986,25 @@
                     <span>2. Furry Companion Details</span>
                   </h3>
 
-                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 xl:gap-4">
                     <!-- Pet Name -->
                     <div>
-                      <label for="pet-name" class="block text-xs font-bold text-forest uppercase tracking-wider mb-1.5">
+                      <label for="pet-name" class="block text-xs font-bold text-forest uppercase tracking-wider mb-1.5 whitespace-nowrap">
                         Pet Name *
                       </label>
                       <input type="text" id="pet-name" name="pet-name" required placeholder="e.g., Milo"
-                        class="w-full px-4 py-3 rounded-xl border border-sage/40 bg-cream/30 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest text-sm text-charcoal transition-all" />
+                        class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-sage/40 bg-cream/30 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest text-xs sm:text-sm text-charcoal transition-all" />
                       <span id="pet-name-error" class="text-xs text-red-500 font-medium hidden mt-1">Please enter your
                         pet's name.</span>
                     </div>
 
                     <!-- Pet Type -->
                     <div>
-                      <label for="pet-type" class="block text-xs font-bold text-forest uppercase tracking-wider mb-1.5">
+                      <label for="pet-type" class="block text-xs font-bold text-forest uppercase tracking-wider mb-1.5 whitespace-nowrap">
                         Pet Type *
                       </label>
                       <select id="pet-type" name="pet-type" required
-                        class="w-full px-4 py-3 rounded-xl border border-sage/40 bg-cream/30 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest text-sm text-charcoal transition-all">
+                        class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-sage/40 bg-cream/30 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest text-xs sm:text-sm text-charcoal transition-all">
                         <option value="">Select Type</option>
                         <option value="Dog">Dog</option>
                         <option value="Cat">Cat</option>
@@ -1970,11 +2017,11 @@
                     <!-- Breed -->
                     <div>
                       <label for="pet-breed"
-                        class="block text-xs font-bold text-forest uppercase tracking-wider mb-1.5">
+                        class="block text-xs font-bold text-forest uppercase tracking-wider mb-1.5 whitespace-nowrap">
                         Breed *
                       </label>
                       <input type="text" id="pet-breed" name="pet-breed" required placeholder="e.g., Goldendoodle"
-                        class="w-full px-4 py-3 rounded-xl border border-sage/40 bg-cream/30 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest text-sm text-charcoal transition-all" />
+                        class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-sage/40 bg-cream/30 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest text-xs sm:text-sm text-charcoal transition-all" />
                       <span id="pet-breed-error" class="text-xs text-red-500 font-medium hidden mt-1">Please specify
                         breed.</span>
                     </div>
@@ -2007,15 +2054,15 @@
                     <span>3. Package &amp; Requested Service</span>
                   </h3>
 
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 xl:gap-4">
                     <!-- Preferred Package (Auto-selected from package CTAs) -->
                     <div>
                       <label for="booking-package"
-                        class="block text-xs font-bold text-forest uppercase tracking-wider mb-1.5">
+                        class="block text-xs font-bold text-forest uppercase tracking-wider mb-1.5 whitespace-nowrap">
                         Preferred Grooming Package *
                       </label>
                       <select id="booking-package" name="booking-package" required
-                        class="w-full px-4 py-3 rounded-xl border border-sage/40 bg-cream/30 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest text-sm text-charcoal transition-all">
+                        class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-sage/40 bg-cream/30 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest text-xs sm:text-sm text-charcoal transition-all">
                         <option value="">Select a package</option>
                         <option value="Puppy Fresh">Puppy Fresh (Introductory)</option>
                         <option value="Signature Groom">Signature Groom (Most Popular)</option>
@@ -2029,11 +2076,11 @@
                     <!-- Requested Primary Service -->
                     <div>
                       <label for="booking-service"
-                        class="block text-xs font-bold text-forest uppercase tracking-wider mb-1.5">
+                        class="block text-xs font-bold text-forest uppercase tracking-wider mb-1.5 whitespace-nowrap">
                         Requested Service Focus *
                       </label>
                       <select id="booking-service" name="booking-service" required
-                        class="w-full px-4 py-3 rounded-xl border border-sage/40 bg-cream/30 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest text-sm text-charcoal transition-all">
+                        class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-sage/40 bg-cream/30 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest text-xs sm:text-sm text-charcoal transition-all">
                         <option value="">Select primary focus</option>
                         <option value="Full Breed Haircut">Full Breed Haircut &amp; Bath</option>
                         <option value="Bath & Blow-Dry">Bath &amp; Blow-Dry Only</option>
@@ -2056,15 +2103,15 @@
                     <span>4. Preferred Schedule</span>
                   </h3>
 
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 xl:gap-4">
                     <!-- Date Input -->
                     <div>
                       <label for="booking-date"
-                        class="block text-xs font-bold text-forest uppercase tracking-wider mb-1.5">
+                        class="block text-xs font-bold text-forest uppercase tracking-wider mb-1.5 whitespace-nowrap">
                         Preferred Appointment Date *
                       </label>
                       <input type="date" id="booking-date" name="booking-date" required
-                        class="w-full px-4 py-3 rounded-xl border border-sage/40 bg-cream/30 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest text-sm text-charcoal transition-all" />
+                        class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-sage/40 bg-cream/30 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest text-xs sm:text-sm text-charcoal transition-all" />
                       <span id="booking-date-error" class="text-xs text-red-500 font-medium hidden mt-1">Please select a
                         valid future date.</span>
                     </div>
@@ -2072,11 +2119,11 @@
                     <!-- Time Slot -->
                     <div>
                       <label for="booking-time"
-                        class="block text-xs font-bold text-forest uppercase tracking-wider mb-1.5">
+                        class="block text-xs font-bold text-forest uppercase tracking-wider mb-1.5 whitespace-nowrap">
                         Preferred Time Window *
                       </label>
                       <select id="booking-time" name="booking-time" required
-                        class="w-full px-4 py-3 rounded-xl border border-sage/40 bg-cream/30 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest text-sm text-charcoal transition-all">
+                        class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-sage/40 bg-cream/30 focus:bg-white focus:outline-none focus:ring-2 focus:ring-forest text-xs sm:text-sm text-charcoal transition-all">
                         <option value="">Select preferred time window</option>
                         <option value="Morning (8:30 AM - 11:30 AM)">Morning (8:30 AM – 11:30 AM)</option>
                         <option value="Midday (11:30 AM - 2:30 PM)">Midday (11:30 AM – 2:30 PM)</option>
@@ -2117,10 +2164,8 @@
                 <!-- Submit Button -->
                 <div class="pt-4">
                   <button id="submit-booking-btn" type="submit"
-                    class="w-full py-3.5 sm:py-4 px-3 sm:px-8 rounded-full bg-forest hover:bg-forest-soft text-cream font-bold text-xs xs:text-sm sm:text-base shadow-xl shadow-forest/20 hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 whitespace-nowrap group">
-                    <span class="whitespace-nowrap">Submit Appointment Enquiry</span>
-                    <i data-lucide="calendar-check"
-                      class="w-5 h-5 text-peach group-hover:scale-110 transition-transform"></i>
+                    class="w-full min-h-[3rem] py-3.5 sm:py-4 px-6 rounded-full bg-forest hover:bg-forest-soft text-cream font-bold text-sm sm:text-base shadow-xl shadow-forest/20 hover:shadow-2xl transition-all duration-300 flex items-center justify-center whitespace-nowrap">
+                    <span>Submit Appointment Enquiry</span>
                   </button>
                   <p class="text-center text-[0.7rem] text-charcoal-muted mt-2">
                     🔒 Your information is private and strictly kept confidential.
@@ -2252,9 +2297,8 @@
                 <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"
                   class="w-9 h-9 rounded-xl bg-white border border-sage/40 flex items-center justify-center text-forest hover:bg-forest hover:text-cream transition-colors shadow-sm"
                   aria-label="TikTok">
-                  <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
-                    <path
-                      d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.11V9.4a6.33 6.33 0 0 0-.86-.06A6.34 6.34 0 0 0 3 15.68a6.34 6.34 0 0 0 10.82 4.49 6.27 6.27 0 0 0 1.86-4.5V8.55a8.28 8.28 0 0 0 5.23 1.88V7a4.83 4.83 0 0 1-1.32-.31z" />
+                  <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
                   </svg>
                 </a>
               </div>
@@ -2315,9 +2359,8 @@
                   upgrade!</p>
               </div>
               <a href="#booking"
-                class="bg-peach hover:bg-peach-dark text-forest font-bold text-sm px-7 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all whitespace-nowrap flex items-center gap-2 flex-shrink-0">
+                class="btn-cta-peach px-7 py-3.5 shadow-lg hover:shadow-xl transition-all whitespace-nowrap flex-shrink-0">
                 <span>Book Your Pet's Visit</span>
-                <i data-lucide="sparkles" class="w-4 h-4"></i>
               </a>
             </div>
 
@@ -2351,7 +2394,7 @@
           </p>
           <div class="flex items-center gap-3 pt-2">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-              class="w-8 h-8 rounded-full bg-forest text-peach flex items-center justify-center hover:bg-peach hover:text-forest transition-colors"
+              class="w-9 h-9 rounded-full bg-forest-soft border border-peach/20 text-peach flex items-center justify-center hover:bg-peach hover:text-forest transition-colors shadow-sm"
               aria-label="Instagram">
               <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round"
                 stroke-linejoin="round">
@@ -2361,7 +2404,7 @@
               </svg>
             </a>
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-              class="w-8 h-8 rounded-full bg-forest text-peach flex items-center justify-center hover:bg-peach hover:text-forest transition-colors"
+              class="w-9 h-9 rounded-full bg-forest-soft border border-peach/20 text-peach flex items-center justify-center hover:bg-peach hover:text-forest transition-colors shadow-sm"
               aria-label="Facebook">
               <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round"
                 stroke-linejoin="round">
@@ -2369,11 +2412,10 @@
               </svg>
             </a>
             <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"
-              class="w-8 h-8 rounded-full bg-forest text-peach flex items-center justify-center hover:bg-peach hover:text-forest transition-colors"
+              class="w-9 h-9 rounded-full bg-forest-soft border border-peach/20 text-peach flex items-center justify-center hover:bg-peach hover:text-forest transition-colors shadow-sm"
               aria-label="TikTok">
-              <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.11V9.4a6.33 6.33 0 0 0-.86-.06A6.34 6.34 0 0 0 3 15.68a6.34 6.34 0 0 0 10.82 4.49 6.27 6.27 0 0 0 1.86-4.5V8.55a8.28 8.28 0 0 0 5.23 1.88V7a4.83 4.83 0 0 1-1.32-.31z" />
+              <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
               </svg>
             </a>
           </div>
@@ -2389,6 +2431,7 @@
             <li><a href="#packages" class="hover:text-peach transition-colors">Packages &amp; Pricing</a></li>
             <li><a href="#gallery" class="hover:text-peach transition-colors">Before &amp; After</a></li>
             <li><a href="#about" class="hover:text-peach transition-colors">Grooming Team</a></li>
+            <li><a href="#wellness" class="hover:text-peach transition-colors">Pet Wellness</a></li>
             <li><a href="#contact" class="hover:text-peach transition-colors">Contact</a></li>
           </ul>
         </div>
@@ -2420,9 +2463,8 @@
               class="text-peach hover:underline">hello@pawandpolishstudio.com</a>
           </p>
           <div class="pt-2">
-            <a href="#booking" class="inline-flex items-center gap-1.5 text-xs font-bold text-peach hover:underline">
+            <a href="#booking" class="inline-block text-xs font-bold text-peach hover:underline">
               <span>Book Appointment Enquiry</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
             </a>
           </div>
         </div>
@@ -2432,23 +2474,12 @@
       <!-- Bottom Bar: Copyright, Legal Placeholders & Back to Top Arrow -->
       <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-cream/60">
         <div>
-          &copy; <span id="current-year">2026</span> PAW &amp; POLISH Studio. All rights reserved. Designed for
-          ThemeForest website template marketplace.
+          &copy; <span id="current-year">2026</span> PAW &amp; POLISH Studio. All rights reserved.
         </div>
         <div class="flex items-center gap-6">
           <a href="#contact" class="hover:text-cream transition-colors">Privacy Policy</a>
           <a href="#contact" class="hover:text-cream transition-colors">Terms of Service</a>
           <a href="#contact" class="hover:text-cream transition-colors">Grooming Waiver</a>
-
-          <!-- Back to Top Button in Footer -->
-          <a href="#home"
-            class="back-to-top-btn inline-flex items-center justify-center w-8 h-8 rounded-full bg-forest text-peach hover:bg-peach hover:text-forest border border-white/10 transition-all duration-300 font-bold shadow-sm group"
-            aria-label="Back to top" title="Back to top">
-            <svg class="w-4 h-4 group-hover:-translate-y-0.5 transition-transform stroke-current stroke-2 fill-none"
-              viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m18 15-6-6-6 6" />
-            </svg>
-          </a>
         </div>
       </div>
 
@@ -2523,9 +2554,8 @@
       <div class="flex justify-end gap-3">
         <a href="#booking"
           onclick="document.getElementById('lightbox-modal').classList.add('hidden'); document.body.style.overflow='';"
-          class="inline-flex items-center gap-2 bg-forest text-cream font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:bg-forest-soft transition-colors">
+          class="inline-flex items-center justify-center bg-forest text-cream font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:bg-forest-soft transition-colors whitespace-nowrap">
           <span>Book Similar Service</span>
-          <i data-lucide="arrow-right" class="w-4 h-4 text-peach"></i>
         </a>
       </div>
 
